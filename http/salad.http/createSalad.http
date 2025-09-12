@@ -1,0 +1,12 @@
+POST http://localhost:5000/
+Content-Type: application/json
+
+{
+    "name": "Greek",
+    "weight": 400,
+    "inGredients": ["cheese", "tomato", "olives"],
+    "souce":"oil",
+    "dietType": "none",
+    "spicy": false,
+    "expired": "2024-09-17"
+  }

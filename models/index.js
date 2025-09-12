@@ -3,7 +3,11 @@ const { Schema } = require("mongoose");
 
 const DB = process.env.DB_NAME || "fe_test";
 
-mongoose.connect(`mongodb://localhost:27017/${DB}`);
+// start = async () => {
+//   await mongoose.connect(`mongodb://127.0.0.1:27017/${DB}`);
+// };
+
+mongoose.connect(`mongodb://127.0.0.1:27017/${DB}`);
 
 const saladSchema = new Schema({
   name: {
@@ -20,12 +24,13 @@ const saladSchema = new Schema({
     required: true,
     validate: {
       validator: (value) => {
-        if (validate >= new Date()) {
+        if (value >= new Date()) {
           return true;
         } else {
           return false;
         }
       },
+      message: "Salad is expired",
     },
   },
 });
