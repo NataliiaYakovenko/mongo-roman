@@ -13,7 +13,17 @@ module.exports.createSalad = async (req, res, next) => {
   }
 };
 
-module.exports.getAllSalads = async (req, res, next) => {};
+module.exports.getAllSalads = async (req, res, next) => {
+  try {
+    const foundAllSalads = await Salad.find();
+    if (!foundAllSalads) {
+      return res.status(404).send("Salad not found");
+    }
+    return res.status(200).send({ data: foundAllSalads });
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports.getSaladById = async (req, res, next) => {
   try {

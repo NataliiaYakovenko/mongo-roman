@@ -6,7 +6,7 @@ const { errorHandler } = require("./errorHandler");
 app.use(express.json());
 
 app.post("/", SaladController.createSalad);
-// app.get("/");
+app.get("/", SaladController.getAllSalads);
 app.get("/:saladId", SaladController.getSaladById);
 // app.put("/:saladId");
 // app.delete("/:saladId");
