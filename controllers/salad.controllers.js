@@ -30,6 +30,7 @@ module.exports.getSaladById = async (req, res, next) => {
     const { saladId } = req.params;
 
     const foundSaladById = await Salad.findById(saladId);
+
     if (!foundSaladById) {
       return res.status(404).send("Salad not found");
     }
@@ -39,6 +40,35 @@ module.exports.getSaladById = async (req, res, next) => {
   }
 };
 
-module.exports.putSaladById = async () => {};
+module.exports.putSaladById = async (req, res, next) => {
+  const {
+    params: { saladId },
+    body,
+  } = req;
 
-module.exports.deleteSaladById = async () => {};
+  try {
+    const updatedSalad = await Salad.findOneAndUpdate({ _id: saladId }, body, {
+      returnDocument: "after",
+    });
+    if (!updatedSalad) {
+      return res.status(404).send("Salad not found");
+    }
+    return res.status(200).send({ data: updatedSalad });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports.deleteSaladById = async (req, res, next) => {
+  const { saladId } = req.params;
+
+  try {
+    const deletedSalad = await Salad.findOneAndDelete({ _id: saladId });
+    if (deletedSalad) {
+      return res.status(404).send("Salat not found");
+    }
+    return res.status(200).end();
+  } catch (error) {
+    next(error);
+  }
+};

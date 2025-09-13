@@ -8,8 +8,8 @@ app.use(express.json());
 app.post("/", SaladController.createSalad);
 app.get("/", SaladController.getAllSalads);
 app.get("/:saladId", SaladController.getSaladById);
-// app.put("/:saladId");
-// app.delete("/:saladId");
+app.put("/:saladId", SaladController.putSaladById);
+app.delete("/:saladId", SaladController.deleteSaladById);
 
 app.use(errorHandler);
 

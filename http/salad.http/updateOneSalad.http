@@ -1,0 +1,7 @@
+PUT http://localhost:5000/68c465bc2a407388a94b3483
+Content-Type: application/json
+
+{
+    "name": "Fish",
+    "inGredients": ["fish", "tomato", "olives"]
+}
