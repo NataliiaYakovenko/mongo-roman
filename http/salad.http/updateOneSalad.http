@@ -1,4 +1,4 @@
-PUT http://localhost:5000/68c465bc2a407388a94b3483
+PUT http://localhost:5000/api/salads/68c465bc2a407388a94b3483
 Content-Type: application/json
 
 {

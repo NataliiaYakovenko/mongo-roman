@@ -1,4 +1,4 @@
-POST http://localhost:5000/
+POST http://localhost:5000/api/salads
 Content-Type: application/json
 
 {

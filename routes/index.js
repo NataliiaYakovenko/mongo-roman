@@ -1,6 +1,6 @@
 const { Router } = require("express");
 const saladRouter = require("./saladsRouter");
-const ingredientRouter = require("./ingridientsRoutes");
+const ingredientRouter = require("./ingredientsRouter");
 
 const router = Router();
 

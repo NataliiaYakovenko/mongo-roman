@@ -1,0 +1,7 @@
+POST http://localhost:5000/api/ingredients
+Content-Type: application/json
+
+{
+    "name": "milk",
+    "price": 50
+}

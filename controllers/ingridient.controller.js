@@ -16,7 +16,7 @@ module.exports.findIngredients = async (req, res, next) => {
   try {
     const foundIngredients = await Ingredient.find();
 
-    return res.status(200).send({ data: this.findIngredients });
+    return res.status(200).send({ data: foundIngredients });
   } catch (error) {
     next(error);
   }
