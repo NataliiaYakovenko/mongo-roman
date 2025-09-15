@@ -2,9 +2,9 @@ POST http://localhost:5000/api/salads
 Content-Type: application/json
 
 {
-    "name": "Greek",
+    "name": "New salad",
     "weight": 400,
-    "inGredients": ["cheese", "tomato", "olives"],
+    "inGredients": ["cheeken", "tomato"],
     "souce":"oil",
     "dietType": "none",
     "spicy": false,
